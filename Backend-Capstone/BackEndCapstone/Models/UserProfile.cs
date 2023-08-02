@@ -34,6 +34,8 @@ namespace BackEndCapstone.Models
         public int UserTypeId { get; set; }
         public UserType? UserType { get; set; }
 
+        public List<PatientAssignment> PatientAssignments { get; set; }
+
         public string FullName
         {
             get
