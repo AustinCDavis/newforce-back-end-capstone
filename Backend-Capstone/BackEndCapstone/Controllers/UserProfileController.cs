@@ -59,7 +59,7 @@ namespace BackEndCapstone.Controllers
 
         // PUT api/UserProfile/5
         [HttpPut("{id}")]
-        public ActionResult Update(int id, UserProfile userProfile)
+        public IActionResult Update(int id, UserProfile userProfile)
         {
             if (id != userProfile.Id)
             {
@@ -72,7 +72,7 @@ namespace BackEndCapstone.Controllers
 
         // DELETE api/UserProfile/5
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             _userRepository.Delete(id);
             return NoContent();

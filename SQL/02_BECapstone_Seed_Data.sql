@@ -109,9 +109,9 @@ insert into UserProfile (Id, FirstName, LastName, Email, Password, CreateDateTim
 set identity_insert [UserProfile] off
 
 set identity_insert [PatientAssignment] on
-insert into PatientAssignment (Id, PatientProfileId, ProviderProfileId, BeginDate, EndDate) values (1, 2, 5, '2023-04-23', '2023-12-22');
-insert into PatientAssignment (Id, PatientProfileId, ProviderProfileId, BeginDate, EndDate) values (2, 3, 5, '2023-06-19', '2024-02-22');
-insert into PatientAssignment (Id, PatientProfileId, ProviderProfileId, BeginDate, EndDate) values (3, 4, 6, '2023-03-18', '2023-09-22');
+insert into PatientAssignment (Id, PatientProfileId, ProviderProfileId, BeginDate, EndDate) values (1, 2, 5, '2023-04-23 08:47:18', '2023-12-22 08:47:18');
+insert into PatientAssignment (Id, PatientProfileId, ProviderProfileId, BeginDate, EndDate) values (2, 3, 5, '2023-06-19 08:47:18', '2024-02-22 08:47:18');
+insert into PatientAssignment (Id, PatientProfileId, ProviderProfileId, BeginDate, EndDate) values (3, 4, 6, '2023-03-18 08:47:18', '2023-09-22 08:47:18');
 set identity_insert [PatientAssignment] off
 
 set identity_insert [Note] on
@@ -121,7 +121,7 @@ insert into Note (Id, PatientProfileId, ProviderProfileId, Content, CreateDateTi
 set identity_insert [Note] off
 
 set identity_insert [Message] on
-insert into Message (Id, ToId, FromId, Content, CreateDateTime) values (1, 5, 2, 'Hi Reina, as discussed we this will be a primary resource for your at home exercises where you can tell me how you feel about each exercise.', '2023-04-23 16:30:57');
+insert into Message (Id, FromId, ToId, Content, CreateDateTime) values (1, 5, 2, 'Hi Reina, as discussed we this will be a primary resource for your at home exercises where you can tell me how you feel about each exercise.', '2023-04-23 16:30:57');
 set identity_insert [Message] off
 
 set identity_insert [Regimen] on
@@ -155,9 +155,9 @@ insert into RegimenExercise (Id, RegimenId, ExerciseId) values (20, 4, 17);
 set identity_insert [RegimenExercise] off
 
 set identity_insert [RegimenAssignment] on
-insert into RegimenAssignment (Id, RegimenId, PatientProfileId, AssignmentDate) values (1, 1, 2, '2023-12-22');
-insert into RegimenAssignment (Id, RegimenId, PatientProfileId, AssignmentDate) values (2, 2, 3, '2024-02-22');
-insert into RegimenAssignment (Id, RegimenId, PatientProfileId, AssignmentDate) values (3, 4, 4, '2023-09-22');
+insert into RegimenAssignment (Id, RegimenId, PatientProfileId, AssignmentDate) values (1, 1, 2, '2023-12-22 08:47:18');
+insert into RegimenAssignment (Id, RegimenId, PatientProfileId, AssignmentDate) values (2, 2, 3, '2024-02-22 08:47:18');
+insert into RegimenAssignment (Id, RegimenId, PatientProfileId, AssignmentDate) values (3, 4, 4, '2023-09-22 08:47:18');
 set identity_insert [RegimenAssignment] off
 
 --still need comment, exercise reaction, and message
@@ -168,5 +168,5 @@ set identity_insert [ExerciseReaction] off
 
 
 set identity_insert [Comment] on
-insert into Comment (Id, RegimenExerciseId, Content, CreateDateTime) values (1, 1, 'Feels great so far. Slightly challenging but not to the extent I am feeling pain.', '2023-04-24 09:18:31');
+insert into Comment (Id, UserId, RegimenExerciseId, Content, CreateDateTime) values (1, 2, 1, 'Feels great so far. Slightly challenging but not to the extent I am feeling pain.', '2023-04-24 09:18:31');
 set identity_insert [Comment] off

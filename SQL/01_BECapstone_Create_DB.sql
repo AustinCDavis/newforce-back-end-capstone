@@ -60,8 +60,8 @@ CREATE TABLE [PatientAssignment] (
   [Id] integer PRIMARY KEY IDENTITY,
   [PatientProfileId] integer NOT NULL,
   [ProviderProfileId] integer NOT NULL,
-  [BeginDate] date NOT NULL,
-  [EndDate] date
+  [BeginDate] datetime NOT NULL,
+  [EndDate] datetime
 
   CONSTRAINT [FK_PatientAssignment_UserProfile_Patient] FOREIGN KEY ([PatientProfileId]) REFERENCES [UserProfile] ([Id]),
   CONSTRAINT [FK_PatientAssignment_UserProfile_Provider] FOREIGN KEY ([ProviderProfileId]) REFERENCES [UserProfile] ([Id])
@@ -90,13 +90,13 @@ CREATE TABLE [Regimen] (
 
 CREATE TABLE [Message] (
   [Id] integer PRIMARY KEY IDENTITY,
-  [ToId] integer NOT NULL,
   [FromId] integer NOT NULL,
+  [ToId] integer NOT NULL,
   [Content] text NOT NULL,
   [CreateDateTime] datetime NOT NULL
 
-  CONSTRAINT [FK_Message_UserProfile_To] FOREIGN KEY ([ToId]) REFERENCES [UserProfile] ([Id]),
-  CONSTRAINT [FK_Message_UserProfile_From] FOREIGN KEY ([FromId]) REFERENCES [UserProfile] ([Id])
+  CONSTRAINT [FK_Message_UserProfile_From] FOREIGN KEY (FromId) REFERENCES [UserProfile] ([Id]),
+  CONSTRAINT [FK_Message_UserProfile_To] FOREIGN KEY (ToId) REFERENCES [UserProfile] ([Id])
 )
 
 --Functions as a bridge table because there is a many to many relationship between regimen and exercise,
@@ -119,7 +119,7 @@ CREATE TABLE [RegimenAssignment] (
   [Id] integer PRIMARY KEY IDENTITY,
   [RegimenId] integer NOT NULL,
   [PatientProfileId] integer NOT NULL,
-  [AssignmentDate] date NOT NULL
+  [AssignmentDate] datetime NOT NULL
 
   CONSTRAINT [FK_RegimenAssignment_Regimen_Regimen] FOREIGN KEY ([RegimenId]) REFERENCES [Regimen] ([Id]),
   CONSTRAINT [FK_RegimenAssignment_UserProfile_Patient] FOREIGN KEY ([PatientProfileId]) REFERENCES [UserProfile] ([Id])
@@ -142,10 +142,12 @@ CREATE TABLE [ExerciseReaction] (
 --reference both the exercise and  regimen associated
 CREATE TABLE [Comment] (
   [Id] integer PRIMARY KEY IDENTITY,
+  [UserId] integer NOT NULL,
   [RegimenExerciseId] integer NOT NULL,
   [Content] text NOT NULL,
   [CreateDateTime] datetime NOT NULL
 
+  CONSTRAINT [FK_Comment_UserProfile_User] FOREIGN KEY ([UserId]) REFERENCES [UserProfile] ([Id]),
   CONSTRAINT [FK_Comment_RegimenExercise] FOREIGN KEY ([RegimenExerciseId]) REFERENCES [RegimenExercise] ([Id])
 )
 GO

@@ -7,8 +7,7 @@ namespace BackEndCapstone.Models
         public int Id { get; set; }
 
         [Required]
-        public int UserProfileId { get; set; }
-        public UserProfile? UserProfile { get; set; }
+        public int ProviderProfileId { get; set; }
 
         [Required]
         [MaxLength(50)]
@@ -20,5 +19,8 @@ namespace BackEndCapstone.Models
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime CreateDateTime { get; set; }
+
+        public RegimenExercise? RegimenExercise { get; set; }
+        public UserProfile? UserProfile { get; set; }
     }
 }

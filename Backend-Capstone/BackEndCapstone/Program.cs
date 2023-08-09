@@ -12,6 +12,17 @@ namespace BackEndCapstone
 
             builder.Services.AddControllers();
             builder.Services.AddTransient<IUserRepository, UserRepository>();
+            builder.Services.AddTransient<IRegimenRepository, RegimenRepository>();
+            builder.Services.AddTransient<IRegimenExerciseRepository, RegimenExerciseRepository>();
+            builder.Services.AddTransient<IRegimenAssignmentRepository, RegimenAssignmentRepository>();
+            builder.Services.AddTransient<IPatientAssignmentRepository, PatientAssignmentRepository>();
+            builder.Services.AddTransient<INoteRepository, NoteRepository>();
+            builder.Services.AddTransient<IMessageRepository, MessageRepository>();
+            builder.Services.AddTransient<IExerciseRepository, ExerciseRepository>();
+            builder.Services.AddTransient<ICommentRepository, CommentRepository>();
+
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

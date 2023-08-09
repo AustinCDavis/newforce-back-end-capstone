@@ -25,6 +25,8 @@ namespace BackEndCapstone.Models
         [DataType(DataType.Url)]
         [MaxLength(255)]
         public string VideoLocation { get; set; }
+        public Regimen? Regimen { get; set; }
 
+        public RegimenAssignment? RegimenAssignment { get; set; }
     }
 }

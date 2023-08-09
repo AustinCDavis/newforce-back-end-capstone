@@ -15,6 +15,6 @@ namespace BackEndCapstone.Models
         public UserProfile? UserProfile { get; set; }
 
         [Required]
-        public DateOnly AssignmentDate { get; set; }
+        public DateTime AssignmentDate { get; set; }
     }
 }

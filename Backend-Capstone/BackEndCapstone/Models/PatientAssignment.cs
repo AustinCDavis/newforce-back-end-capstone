@@ -15,6 +15,7 @@ namespace BackEndCapstone.Models
         public UserProfile? PatientProfile { get; set; }
 
         [Required]
-        public DateOnly AssignmentDate { get; set; }
+        public DateTime BeginDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

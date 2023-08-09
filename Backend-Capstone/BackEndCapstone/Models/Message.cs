@@ -7,12 +7,12 @@ namespace BackEndCapstone.Models
         public int Id { get; set; }
 
         [Required]
-        public int ToId { get; set; }
+        public int FromId { get; set; }
 
         [Required]
-        public int FromId { get; set; }
-        public UserProfile? ToUserProfile { get; set; }
+        public int ToId { get; set; }
         public UserProfile? FromUserProfile { get; set; }
+        public UserProfile? ToUserProfile { get; set; }
 
         [Required]
         [MaxLength(500)]
