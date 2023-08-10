@@ -16,6 +16,7 @@ export default function Login({ setIsLoggedIn }) {
                 if (user?.email === email && user?.password === password) {
                     setIsLoggedIn(true)
                     navigate('/')
+                    console.log(user)
                 }
                 else {
                     alert("Invalid email or password")
