@@ -50,6 +50,7 @@ namespace BackEndCapstone.Controllers
         [HttpPost]
         public IActionResult Post(UserProfile userProfile)
         {
+            userProfile.CreateDateTime = DateTime.Now;
             _userRepository.Add(userProfile);
             return CreatedAtAction(
                 "GetByEmail",

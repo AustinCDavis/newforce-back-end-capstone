@@ -23,7 +23,6 @@ namespace BackEndCapstone.Models
         [MaxLength(50)]
         public string Password { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime CreateDateTime { get; set; }
 
         [DataType(DataType.Url)]
@@ -42,6 +41,5 @@ namespace BackEndCapstone.Models
                 return $"{FirstName} {LastName}";
             }
         }
-        public List<PatientAssignment>? PatientAssignments { get; set; }
     }
 }
