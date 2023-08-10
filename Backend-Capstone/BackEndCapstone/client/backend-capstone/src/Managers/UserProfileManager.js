@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 const apiUrl = "https://localhost:5001";
 
 export const login = (userObject) => {
@@ -18,7 +20,8 @@ export const logout = () => {
       localStorage.clear()
 };
 
-export const register = (userObject, password) => {
+export const register = (userObject) => {
+
   return  fetch(`${apiUrl}/api/UserProfile`, {
     method: "POST",
     headers: {
@@ -27,7 +30,15 @@ export const register = (userObject, password) => {
     body: JSON.stringify(userObject),
   })
   .then((response) => response.json())
-    .then((savedUser) => {
-      localStorage.setItem("user", JSON.stringify(savedUser))
-    });
+    .then(() => {
+      <Navigate to="/login"/>
+    })
+  // .then((savedUser) => {
+  //     fetch(`${apiUrl}/api/UserProfile/GetByEmail?email=${savedUser.email}`)
+  //     .then((user) => {
+  //       console.log(user)
+  //       localStorage.setItem("user", JSON.stringify(user));
+  //       return user
+  //       })
+  //   });
 };
