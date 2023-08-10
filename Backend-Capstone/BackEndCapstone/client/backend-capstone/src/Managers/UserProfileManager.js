@@ -1,5 +1,3 @@
-import { Navigate } from "react-router-dom";
-
 const apiUrl = "https://localhost:5001";
 
 export const login = (userObject) => {
@@ -21,7 +19,6 @@ export const logout = () => {
 };
 
 export const register = (userObject) => {
-
   return  fetch(`${apiUrl}/api/UserProfile`, {
     method: "POST",
     headers: {
@@ -30,15 +27,18 @@ export const register = (userObject) => {
     body: JSON.stringify(userObject),
   })
   .then((response) => response.json())
-    .then(() => {
-      <Navigate to="/login"/>
+  .then((savedUser) => {
+      return fetch(`${apiUrl}/api/UserProfile/GetByEmail?email=${savedUser.email}`)
+      .then((r) => r.json())
+      .then((user) => {
+        if(user.id){
+          console.log(user)
+          localStorage.setItem("user", JSON.stringify(user));
+          return user
+        }
+        else{
+          return undefined
+        }
+      });
     })
-  // .then((savedUser) => {
-  //     fetch(`${apiUrl}/api/UserProfile/GetByEmail?email=${savedUser.email}`)
-  //     .then((user) => {
-  //       console.log(user)
-  //       localStorage.setItem("user", JSON.stringify(user));
-  //       return user
-  //       })
-  //   });
 };
