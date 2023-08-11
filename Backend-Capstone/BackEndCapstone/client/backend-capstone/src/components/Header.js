@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink as RRNavLink } from "react-router-dom";
 import { logout } from '../Managers/UserProfileManager';
-import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header({ isLoggedIn, setIsLoggedIn }) {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const user = JSON.parse(localStorage.getItem("user"));
 
     return (
         <div>
@@ -16,23 +17,47 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         { /* When isLoggedIn === true, we will render the Home link */}
-                        {isLoggedIn &&
-                            <NavItem>
-                                <NavLink tag={RRNavLink} to="/">Home</NavLink>
-                            </NavItem>
-                        }
-                    </Nav>
-                    <Nav navbar>
-                        {isLoggedIn &&
+                        {isLoggedIn && user.userType.type === "Patient" &&
                             <>
                                 <NavItem>
-                                        <NavLink tag={RRNavLink} onClick={() => {
-                                            logout()
-                                            setIsLoggedIn(false)
-                                        }}>Logout</NavLink>
+                                    <NavLink tag={RRNavLink} to="/">Home</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink tag={RRNavLink} onClick={() => {
+                                        logout()
+                                        setIsLoggedIn(false)
+                                    }}>Logout</NavLink>
                                 </NavItem>
                             </>
                         }
+                        {isLoggedIn && user.userType.type === "Provider" &&
+                            <>
+                                <NavItem>
+                                    <NavLink tag={RRNavLink} to="/">Home</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink tag={RRNavLink} onClick={() => {
+                                        logout()
+                                        setIsLoggedIn(false)
+                                    }}>Logout</NavLink>
+                                </NavItem>
+                            </>
+                        }
+                        {isLoggedIn && user.userType.type === "Admin" &&
+                            <>
+                                <NavItem>
+                                    <NavLink tag={RRNavLink} to="/">Home</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink tag={RRNavLink} onClick={() => {
+                                        logout()
+                                        setIsLoggedIn(false)
+                                    }}>Logout</NavLink>
+                                </NavItem>
+                            </>
+                        }
+                    </Nav>
+                    <Nav navbar>
                         {!isLoggedIn &&
                             <>
                                 <NavItem>
