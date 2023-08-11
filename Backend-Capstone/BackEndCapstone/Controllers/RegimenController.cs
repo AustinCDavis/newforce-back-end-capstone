@@ -56,6 +56,8 @@ namespace BackEndCapstone.Controllers
         [HttpPost]
         public IActionResult Post(Regimen regimen) 
         {
+            regimen.CreateDateTime = DateTime.Now;
+
             _regimenRepository.Add(regimen);
             return CreatedAtAction("Get", new { id = regimen.Id }, regimen);
         }

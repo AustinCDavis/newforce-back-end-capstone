@@ -32,7 +32,6 @@ export const register = (userObject) => {
       .then((r) => r.json())
       .then((user) => {
         if(user.id){
-          console.log(user)
           localStorage.setItem("user", JSON.stringify(user));
           return user
         }

@@ -22,6 +22,17 @@ namespace BackEndCapstone.Controllers
             return Ok(_exerciseRepository.GetAll());
         }
 
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var exercise = _exerciseRepository.GetById(id);
+            if (exercise == null)
+            {
+                return NotFound();
+            }
+            return Ok(exercise);
+        }
+
 
         [HttpGet("Regimen{id}")]
         public IActionResult GetExercisesByRegimenId(int id)

@@ -26,7 +26,7 @@ namespace BackEndCapstone.Controllers
             return Ok(messages);
         }
 
-        [HttpGet("{fromId}, {toId}")]
+        [HttpGet("From{fromId}/To{toId}")]
         public IActionResult GetMessagesByFromIdAndToId(int fromId, int toId)
         {
             var messages = _messageRepository.GetMessagesByFromIdAndToId(fromId, toId);

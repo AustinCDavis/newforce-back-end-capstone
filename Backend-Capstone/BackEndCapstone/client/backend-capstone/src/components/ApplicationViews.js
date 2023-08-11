@@ -6,7 +6,6 @@ import Admin from "./Admin";
 
 export default function ApplicationViews() {
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user.userType.type)
   return (
     //Primary route reassignment based on if the user is admin, pt, or provider to allow differing dashboards
     <Routes>

@@ -83,6 +83,46 @@ namespace BackEndCapstone.Repositories
         }
 
 
+        public Exercise GetById(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        SELECT e.Id, e.Name, e.Type, e.Muscle, e.Instructions, e.VideoLocation
+                        FROM Exercise e
+                        WHERE e.Id = @Id
+                        ";
+
+                    DbUtils.AddParameter(cmd, "@Id", id);
+
+                    var reader = cmd.ExecuteReader();
+
+                    Exercise exercise = null;
+                    if (reader.Read())
+                    {
+                        exercise = new Exercise()
+                        {
+
+                            Id = DbUtils.GetInt(reader, "Id"),
+                            Name = DbUtils.GetString(reader, "Name"),
+                            Type = DbUtils.GetString(reader, "Type"),
+                            Muscle = DbUtils.GetString(reader, "Muscle"),
+                            Instructions = DbUtils.GetString(reader, "Instructions"),
+                            VideoLocation = DbUtils.GetString(reader, "VideoLocation")
+                        };
+                    }
+                    reader.Close();
+
+                    return exercise;
+
+
+                }
+            }
+        }
+
         public List<Exercise> GetExercisesByPatientId(int id)
         {
             using (var conn = Connection)

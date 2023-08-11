@@ -7,6 +7,7 @@ namespace BackEndCapstone.Repositories
         void Add(Exercise exercise);
         void Delete(int id);
         List<Exercise> GetAll();
+        Exercise GetById(int id);
         List<Exercise> GetExercisesByPatientId(int id);
         List<Exercise> GetExercisesByRegimenId(int id);
         void Update(Exercise exercise);

@@ -112,6 +112,7 @@ namespace BackEndCapstone.Repositories
                     cmd.CommandText = @"
                         SELECT r.Id, r.ProviderProfileId, r.Title, r.Description,               r.CreateDateTime, up.FirstName, up.LastName, up.UserTypeId
                         FROM Regimen r
+                            LEFT JOIN RegimenAssignment ra on ra.RegimenId = r.Id
                             LEFT JOIN UserProfile up on up.Id = ra.PatientProfileId
                         WHERE ra.PatientProfileId = @Id
                         ORDER BY r.Id";
