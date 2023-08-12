@@ -19,8 +19,8 @@ export const addNote = (noteObject) => {
 
 
 
-export const getNoteByProviderId = (id) => {
-    return fetch(`${apiUrl}/api/Note/Provider${id}`)
+export const getNotesByPatientId = (id) => {
+    return fetch(`${apiUrl}/api/Note/Patient${id}`)
     .then((r) => r.json())
 
 }

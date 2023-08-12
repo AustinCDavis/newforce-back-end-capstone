@@ -22,7 +22,7 @@ namespace BackEndCapstone.Repositories
                             LEFT JOIN UserProfile up1 on up1.Id = n.ProviderProfileId
                             LEFT JOIN UserProfile up2 on up2.Id = n.PatientProfileId
                         WHERE n.ProviderProfileId = @Id
-                        ORDER BY n.CreateDateTime";
+                        ORDER BY n.CreateDateTime DESC";
 
                     DbUtils.AddParameter(cmd, "@Id", id);
 
@@ -54,7 +54,7 @@ namespace BackEndCapstone.Repositories
                             LEFT JOIN UserProfile up1 on up1.Id = n.ProviderProfileId
                             LEFT JOIN UserProfile up2 on up2.Id = n.PatientProfileId
                         WHERE n.PatientProfileId = @Id
-                        ORDER BY n.CreateDateTime";
+                        ORDER BY n.CreateDateTime DESC";
 
                     DbUtils.AddParameter(cmd, "@Id", id);
 

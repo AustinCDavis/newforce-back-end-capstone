@@ -1,39 +1,44 @@
 import React, { useState, useEffect } from "react";
 import { Col, Card, Container, Row, ListGroup, Button, Carousel } from "react-bootstrap";
-import "./PatientAssignment.css"
 import { useParams } from "react-router-dom";
+import dateFormat from "dateformat";
 import { getUserProfileById } from "../../Managers/UserProfileManager";
 import { getRegimenByPatientId } from "../../Managers/RegimenManager";
+import { getExercisesByPatientId } from "../../Managers/ExerciseManager";
+import { getNotesByPatientId } from "../../Managers/NoteManager";
+import "./PatientAssignment.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-
 export const PatientChart = () => {
-    const [regimen, setRegimen] = useState([]);
     const [patient, setPatient] = useState([]);
+    const [regimen, setRegimen] = useState([]);
+    const [exercises, setExercises] = useState([]);
+    const [notes, setNotes] = useState([]);
+
     const { id } = useParams();
 
-    const getRegimen = () => {
-        getRegimenByPatientId(id)
-        .then(regimen => setRegimen(regimen));
-    };
-    
     useEffect(() => {
-        getRegimen();
-    }, []);
-    
-    console.log(regimen)
-
-    const getPatient = () => {
         getUserProfileById(id)
             .then(patient => setPatient(patient));
-    };
+    }, [id]);
 
     useEffect(() => {
-        getPatient();
-        
-    }, []);
-    
-    console.log(patient)
+        getRegimenByPatientId(id)
+            .then(regimen => setRegimen(regimen));
+    }, [id]);
+
+    useEffect(() => {
+        getExercisesByPatientId(id)
+            .then(exercises => setExercises(exercises));
+    }, [id])
+
+    useEffect(() => {
+        getNotesByPatientId(id)
+            .then(notes => setNotes(notes));
+    }, [id])
+
+
+
 
 
     //returns a list of all user patientAssignments
@@ -67,79 +72,46 @@ export const PatientChart = () => {
                     <Card style={{ marginBottom: 10 }}>
                         <Card.Header className="text-center">Last Patient Note</Card.Header>
                         <Card.Body>
-                            <Card.Title>Special title treatment</Card.Title>
-                            <Card.Text>
-                                With supporting text below as a natural lead-in to additional content.
-                            </Card.Text>
-                            <Button variant="primary">All Notes</Button>
+                            <blockquote className="blockquote mb-0">
+                                <p>
+                                    {' '}
+                                    {notes[0]?.content}
+                                    {' '}
+                                </p>
+                                <footer className="blockquote-footer">
+                                    <i>{dateFormat(notes[0]?.createDateTime, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</i>
+                                </footer>
+                            </blockquote>
                         </Card.Body>
-                        <Card.Footer className="text-center text-muted">2 days ago</Card.Footer>
+                        <Card.Footer className="text-center"><Button variant="primary">All Notes</Button></Card.Footer>
                     </Card>
                     <Card className="text-center">
-                        <Card.Header>Patient Regimen</Card.Header>
+                        <Card.Header>Current Patient Regimen</Card.Header>
                         <Card.Body>
-                            <Card.Title>{}</Card.Title>
+                            <Card.Title>{regimen[0]?.title}</Card.Title>
                             <Card.Text>
-                                With supporting text below as a natural lead-in to additional content.
+                                {regimen[0]?.description}
                             </Card.Text>
                             <Carousel >
-                                <Carousel.Item>
-                                    <Card>
-                                        <Card.Body>
-                                            <Card.Title>A</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
-                                            </Card.Text>
-                                        </Card.Body>
-                                        <ListGroup className="list-group-flush">
-                                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                                        </ListGroup>
-                                        <Card.Footer>
-                                            <Card.Link href="#">Card Link</Card.Link>
-                                            <Card.Link href="#">Another Link</Card.Link>
-                                        </Card.Footer>
-                                    </Card>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <Card>
-                                        <Card.Body>
-                                            <Card.Title>Card</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
-                                            </Card.Text>
-                                        </Card.Body>
-                                        <ListGroup className="list-group-flush">
-                                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                                        </ListGroup>
-                                        <Card.Footer>
-                                            <Card.Link href="#">Card Link</Card.Link>
-                                            <Card.Link href="#">Another Link</Card.Link>
-                                        </Card.Footer>
-                                    </Card>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <Card>
-                                        <Card.Body>
-                                            <Card.Title>Title</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
-                                            </Card.Text>
-                                        </Card.Body>
-                                        <ListGroup className="list-group-flush">
-                                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                                        </ListGroup>
-                                        <Card.Footer>
-                                            <Card.Link href="#">Card Link</Card.Link>
-                                            <Card.Link href="#">Another Link</Card.Link>
-                                        </Card.Footer>
-                                    </Card>
-                                </Carousel.Item>
+                                {exercises.map((exercise) => (
+                                    <Carousel.Item>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>{exercise?.name}</Card.Title>
+                                            </Card.Body>
+                                            <ListGroup className="list-group-flush">
+                                                <ListGroup.Item>Type: {exercise?.type}</ListGroup.Item>
+                                                <ListGroup.Item>Muscle Group: {exercise?.muscle}</ListGroup.Item>
+                                            </ListGroup>
+                                            <Card.Footer>
+                                                <Card.Link href="#">View Exercise</Card.Link>
+                                            </Card.Footer>
+                                        </Card>
+                                    </Carousel.Item>
+                                ))}
                             </Carousel>
                         </Card.Body>
-                        <Card.Footer className="text-muted"><Button variant="primary">View Exercises</Button></Card.Footer>
+                        <Card.Footer className="text-muted"><Button variant="primary">Regimen Details</Button></Card.Footer>
                     </Card>
                 </Col>
             </Row>
