@@ -27,7 +27,7 @@ export const getRegimenById = (id) => {
 
 }
 
-export const getRegimensByPatientId = (id) => {
+export const getRegimenByPatientId = (id) => {
     return fetch(`${apiUrl}/api/Regimen/Patient${id}`)
     .then((r) => r.json())
 

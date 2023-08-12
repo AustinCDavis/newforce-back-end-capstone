@@ -3,23 +3,37 @@ import { Col, Card, Container, Row, ListGroup, Button, Carousel } from "react-bo
 import "./PatientAssignment.css"
 import { useParams } from "react-router-dom";
 import { getUserProfileById } from "../../Managers/UserProfileManager";
+import { getRegimenByPatientId } from "../../Managers/RegimenManager";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export const PatientChart = () => {
+    const [regimen, setRegimen] = useState([]);
     const [patient, setPatient] = useState([]);
     const { id } = useParams();
 
-    const getPatient = () => {
+    const getRegimen = () => {
+        getRegimenByPatientId(id)
+        .then(regimen => setRegimen(regimen));
+    };
+    
+    useEffect(() => {
+        getRegimen();
+    }, []);
+    
+    console.log(regimen)
 
-        console.log(id)
+    const getPatient = () => {
         getUserProfileById(id)
             .then(patient => setPatient(patient));
     };
 
     useEffect(() => {
         getPatient();
+        
     }, []);
+    
+    console.log(patient)
 
 
     //returns a list of all user patientAssignments
@@ -29,7 +43,7 @@ export const PatientChart = () => {
             <Row>
                 <Col xs={3} style={{ marginLeft: 5 }}>
                     <Card>
-                        <Card.Img style={{ marginTop: '-3.5rem' }} variant="middle" src={patient.imageLocation} />
+                        <Card.Img variant="Top" src={patient.imageLocation} />
                         <Card.Body>
                             <Card.Title>{patient.fullName}</Card.Title>
                             <Card.Text>
@@ -64,11 +78,11 @@ export const PatientChart = () => {
                     <Card className="text-center">
                         <Card.Header>Patient Regimen</Card.Header>
                         <Card.Body>
-                            <Card.Title>Special title treatment</Card.Title>
+                            <Card.Title>{}</Card.Title>
                             <Card.Text>
                                 With supporting text below as a natural lead-in to additional content.
                             </Card.Text>
-                            <Carousel slide={false}>
+                            <Carousel >
                                 <Carousel.Item>
                                     <Card>
                                         <Card.Body>
@@ -81,10 +95,10 @@ export const PatientChart = () => {
                                         <ListGroup className="list-group-flush">
                                             <ListGroup.Item>Cras justo odio</ListGroup.Item>
                                         </ListGroup>
-                                        <Card.Body>
+                                        <Card.Footer>
                                             <Card.Link href="#">Card Link</Card.Link>
                                             <Card.Link href="#">Another Link</Card.Link>
-                                        </Card.Body>
+                                        </Card.Footer>
                                     </Card>
                                 </Carousel.Item>
                                 <Carousel.Item>
@@ -99,10 +113,10 @@ export const PatientChart = () => {
                                         <ListGroup className="list-group-flush">
                                             <ListGroup.Item>Cras justo odio</ListGroup.Item>
                                         </ListGroup>
-                                        <Card.Body>
+                                        <Card.Footer>
                                             <Card.Link href="#">Card Link</Card.Link>
                                             <Card.Link href="#">Another Link</Card.Link>
-                                        </Card.Body>
+                                        </Card.Footer>
                                     </Card>
                                 </Carousel.Item>
                                 <Carousel.Item>
@@ -117,10 +131,10 @@ export const PatientChart = () => {
                                         <ListGroup className="list-group-flush">
                                             <ListGroup.Item>Cras justo odio</ListGroup.Item>
                                         </ListGroup>
-                                        <Card.Body>
+                                        <Card.Footer>
                                             <Card.Link href="#">Card Link</Card.Link>
                                             <Card.Link href="#">Another Link</Card.Link>
-                                        </Card.Body>
+                                        </Card.Footer>
                                     </Card>
                                 </Carousel.Item>
                             </Carousel>
@@ -130,8 +144,8 @@ export const PatientChart = () => {
                 </Col>
             </Row>
 
-            <hr class="mt-5" />
-            <div class="clearfix"></div>
+            <hr className="mt-5" />
+            <div className="clearfix"></div>
         </Container>
     );
 
