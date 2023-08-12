@@ -49,7 +49,7 @@ export const editRegimen = (regimen) => {
     })
 }
 
-export const deleteQuestion = (id) => {
+export const deleteRegimen = (id) => {
     return fetch(`${apiUrl}/api/Regimen/${id}`, {
         method: "DELETE",
     }).then(getAllRegimens)

@@ -36,6 +36,12 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                                     <NavLink tag={RRNavLink} to="/">Home</NavLink>
                                 </NavItem>
                                 <NavItem>
+                                    <NavLink tag={RRNavLink} to="/Regimens">Regimens</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink tag={RRNavLink} to="/PatientAssignments">Patient Assignments</NavLink>
+                                </NavItem>
+                                <NavItem>
                                     <NavLink tag={RRNavLink} onClick={() => {
                                         logout()
                                         setIsLoggedIn(false)

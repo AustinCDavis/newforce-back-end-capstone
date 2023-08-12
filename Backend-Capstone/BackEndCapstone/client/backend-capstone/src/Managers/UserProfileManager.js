@@ -1,4 +1,8 @@
+import { createContext } from "react";
+
 const apiUrl = "https://localhost:5001";
+
+export const UserContext = createContext();
 
 export const getAllUserProfiles = () => {
   return fetch(`${apiUrl}/api/UserProfile`)
