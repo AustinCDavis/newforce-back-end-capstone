@@ -44,7 +44,7 @@ export const PatientChart = () => {
     //returns a list of all user patientAssignments
     return (
         <Container fluid >
-            <h1 className="mb-4" style={{ margin: 0 }}> Patient Profile</h1>
+            <h1 className="mb-4 text-center" style={{ margin: 0 }}> Patient Profile</h1>
             <Row>
                 <Col xs={3} style={{ marginLeft: 5 }}>
                     <Card>

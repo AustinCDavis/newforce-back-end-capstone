@@ -45,7 +45,7 @@ export const editExercise = (exercise) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(exercise),
+        body: JSON.stringify(exercise)
     })
 }
 

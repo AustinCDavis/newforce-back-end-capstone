@@ -36,7 +36,7 @@ export const editPatientAssignment = (patientAssignment) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(patientAssignment),
+        body: JSON.stringify(patientAssignment)
     })
 }
 

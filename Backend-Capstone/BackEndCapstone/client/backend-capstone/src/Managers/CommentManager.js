@@ -29,7 +29,7 @@ export const editComment = (commentObject) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(commentObject),
+        body: JSON.stringify(commentObject)
     })
 }
 

@@ -45,7 +45,7 @@ export const editRegimen = (regimen) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(regimen),
+        body: JSON.stringify(regimen)
     })
 }
 

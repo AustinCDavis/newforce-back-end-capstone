@@ -35,7 +35,7 @@ export const getMessageByUserId = (id) => {
 //         headers: {
 //             "Content-Type": "application/json",
 //         },
-//         body: JSON.stringify(messageObject),
+//         body: JSON.stringify(messageObject)
 //     })
 // }
 

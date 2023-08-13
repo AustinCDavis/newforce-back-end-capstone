@@ -31,7 +31,7 @@ export const editNote = (noteObject) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(noteObject),
+        body: JSON.stringify(noteObject)
     })
 }
 

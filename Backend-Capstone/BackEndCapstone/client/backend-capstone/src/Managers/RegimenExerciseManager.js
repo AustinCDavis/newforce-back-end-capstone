@@ -23,7 +23,7 @@ export const editRegimenExercise = (regimenExercise) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(regimenExercise),
+        body: JSON.stringify(regimenExercise)
     })
 }
 

@@ -23,7 +23,7 @@ export const editRegimenAssignment = (regimenAssignment) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(regimenAssignment),
+        body: JSON.stringify(regimenAssignment)
     })
 }
 

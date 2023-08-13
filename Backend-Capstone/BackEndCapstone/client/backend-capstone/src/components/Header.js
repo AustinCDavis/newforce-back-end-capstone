@@ -15,7 +15,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 <NavbarBrand tag={RRNavLink} to="/"></NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
+                    <Nav className="auto" navbar>
                         { /* When isLoggedIn === true, we will render the Home link */}
                         {isLoggedIn && user.userType.type === "Patient" &&
                             <>
@@ -39,7 +39,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                                     <NavLink tag={RRNavLink} to="/Regimens">Regimens</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={RRNavLink} to="/PatientAssignments">Patient Assignments</NavLink>
+                                    <NavLink tag={RRNavLink} to="/PatientAssignments">Assignments</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink tag={RRNavLink} onClick={() => {
