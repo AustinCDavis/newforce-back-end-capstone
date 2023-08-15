@@ -19,81 +19,81 @@ insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLo
 '2. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees or to your comfort level.'  + CHAR(13)+CHAR(10) + 
 '3. Press your heels into the floor to return to the initial position.'  + CHAR(13)+CHAR(10) + 
 '4. Repeat until set is complete.', 'https://thumbs.gfycat.com/FirmLateCrane.webp');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (2, 'Terminal Knee Extension', 'Strengthen', 'Quadriceps', '
-1. Tie an elastic exercise band ,of appropriate weight, to or around something solid.
-2. Once secured, loop the band around the back of your knee and step back until you feel tension on the band.
-3. Slightly bend this knee lifting the heel off the ground.
-4. Then push the heel down into the ground to straighten the knee.
-5. Squeeze the quadriceps in this position, keeping bodyweight through this leg.', 'https://thumbs.gfycat.com/PowerlessMajesticDutchsmoushond.webp');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (3, 'Towel Stretch', 'Stretch', 'Calves', '
-1. Sit on the floor with your legs extended straight out in front of you.
-2. Wrap a towel around your toes on both feet.
-3. Pull back slightly until you start to feel a stretch at the very bottom of your feet and the back of your lower legs.', 'https://thumbs.gfycat.com/WavyGoodnaturedCopepod.webp');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (4, 'Standing Soleus Stretch', 'Stretch', 'Calves', '
-1. Stand a few feet away from a wall or other support, facing it.
-2. Place one leg in back with your heel flat on the floor.
-3. Your other leg can come forward toward the support.
-4. Gently turn the foot on your injured leg inward toward the other foot.
-5. Then slightly bend your front knee into the support until you feel a stretch in your injured leg.', 'https://thumbs.gfycat.com/HonoredScentedHusky.webp');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (5, 'Ankle Circles', 'Stretch', 'Calves', '
-1. Start by turning your ankle around slowly in circles to the left, then the right.
-2. You may even find it easier to try drawing the alphabet in the air with your foot. Lead with your big toe.
-3. Keep your movements small and focus on only use your foot and ankle, not your entire leg.', 'https://images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_8_Ankle_Stretches_to_Try_at_Home_Ankle-Circles.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (2, 'Terminal Knee Extension', 'Strengthen', 'Quadriceps', 
+'1. Tie an elastic exercise band ,of appropriate weight, to or around something solid.' + CHAR(13)+CHAR(10) + 
+'2. Once secured, loop the band around the back of your knee and step back until you feel tension on the band.' + CHAR(13)+CHAR(10) + 
+'3. Slightly bend this knee lifting the heel off the ground.' + CHAR(13)+CHAR(10) + 
+'4. Then push the heel down into the ground to straighten the knee.' + CHAR(13)+CHAR(10) + 
+'5. Squeeze the quadriceps in this position, keeping bodyweight through this leg.', 'https://thumbs.gfycat.com/PowerlessMajesticDutchsmoushond.webp');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (3, 'Towel Stretch', 'Stretch', 'Calves', 
+'1. Sit on the floor with your legs extended straight out in front of you.' + CHAR(13)+CHAR(10) + 
+'2. Wrap a towel around your toes on both feet.' + CHAR(13)+CHAR(10) +  
+'3. Pull back slightly until you start to feel a stretch at the very bottom of your feet and the back of your lower legs.', 'https://thumbs.gfycat.com/WavyGoodnaturedCopepod.webp');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (4, 'Standing Soleus Stretch', 'Stretch', 'Calves', 
+'1. Stand a few feet away from a wall or other support, facing it.' + CHAR(13)+CHAR(10) + 
+'2. Place one leg in back with your heel flat on the floor.' + CHAR(13)+CHAR(10) + 
+'3. Your other leg can come forward toward the support.' + CHAR(13)+CHAR(10) + 
+'4. Gently turn the foot on your injured leg inward toward the other foot.' + CHAR(13)+CHAR(10) + 
+'5. Then slightly bend your front knee into the support until you feel a stretch in your injured leg.', 'https://thumbs.gfycat.com/HonoredScentedHusky.webp');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (5, 'Ankle Circles', 'Stretch', 'Calves', 
+'1. Start by turning your ankle around slowly in circles to the left, then the right.' + CHAR(13)+CHAR(10) + 
+'2. You may even find it easier to try drawing the alphabet in the air with your foot. Lead with your big toe.' + CHAR(13)+CHAR(10) + 
+'3. Keep your movements small and focus on only use your foot and ankle, not your entire leg.', 'https://images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_8_Ankle_Stretches_to_Try_at_Home_Ankle-Circles.gif');
 insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (6, 'Toe Walk', 'Strengthen', 'Calves', '
 1. While standing on your toes walk while maintaining your heel off the ground.', 'https://thumbs.gfycat.com/SoreMemorableAmethystsunbird-size_restricted.gif');
 insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (7, 'Heel Walk', 'Strengthen', 'Foot Extensors', '
 1. While standing on your heels walk while maintaining your toes off the ground.', 'https://thumbs.gfycat.com/CourageousShrillChimneyswift-size_restricted.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (8, 'Lunges', 'Strengthen', 'Quadriceps', '
-1. Start with one foot in front of the other, with your toes facing forward.
-2. Keep your back straight.
-3. Bend your back knee down so that it almost touches the floor.
-4. Then push yourself up again.', 'https://thumbs.gfycat.com/UnknownPleasedKodiakbear-size_restricted.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (9, 'Shoulder Pass-Through', 'Stretch', 'Rotator Cuff', '
-1. Stand with your feet shoulder-width apart and your arms in front of your body.
-2. Hold a stick, like a broomstick or PVC pipe, with an overhand grip. Your arms will be wider than shoulder-width. Make sure the stick or pipe is parallel to the floor.
-3. Engage your core and slowly raise the broomstick or pipe above your head, keeping your arms straight. Only go as far as comfortable.
-4. Hold the pose for a few seconds.
-5. Return to the starting position.', 'https://thumbs.gfycat.com/TotalAngelicDuckbillplatypus-small.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (10, 'Standing Arm Swings', 'Stretch', 'Rotator Cuff', '
-1. Stand tall with your arms by your sides.
-2. Engage your core and swing your arms forward until they’re as high as you can go. Make sure you don’t raise your shoulders.
-3. Return your arms to the starting position and repeat.', 'https://thumbs.gfycat.com/EvenAjarCanine-small.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (11, 'High-to-Low Rows', 'Strengthen', 'Lats', '
-1. Secure a resistance band to a sturdy object above shoulder height.
-2. Kneel down on one knee and grab the band with the opposite hand. The other hand can rest at your side.
-3. Pull the band toward your body while keeping your torso and arm straight. Focus on squeezing the shoulder blades together.
-4. Return to the starting position and repeat.', 'https://post.healthline.com/wp-content/uploads/2020/01/400x400_5_Easy_Rotator_Cuff_Exercises_High_to_Low_Rows.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (12, 'Reverse Fly', 'Strengthen', 'Lats', '
-1. Hold a dumbbell in each hand.
-2. Stand with your feet shoulder-width apart, knees slightly bent.
-3. Engage your core and bend forward at the waist. Keep your back straight. Your arms will be extended.
-4. Raise your arms away from your body. Focus on squeezing your shoulder blades together. Stop when you get to shoulder height.
-5. Slowly return to the starting position and repeat.', 'https://post.healthline.com/wp-content/uploads/2019/12/400x400-Reverse_Fly.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (13, 'Sleeper Stretch', 'Stretch', 'Rotator Cuff', '
-1. Lie on the affected side. If you have no injury or pain, choose a side to start with. Your shoulder should be stacked underneath you.
-2. Bring your elbow straight out from your shoulder and bend this arm, so your fingers are pointing toward the ceiling. This is the starting position.
-3. Gently guide this arm toward the floor using the unaffected arm. Stop when you feel a stretch in the back of your affected shoulder.
-4. Hold this position for up to 30 seconds.', 'https://post.healthline.com/wp-content/uploads/2019/12/400x400_Sleeper_Stretch_Sleeper_Stretch.gif');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (14, 'Fist Clench', 'Strengthen', 'Long Flexor Tendons', '
-1. Sit at a table with your forearm resting on the table.
-2. Hold a rolled-up towel or small ball in your hand.
-3. Squeeze the towel in your hand and hold for 10 seconds.
-4. Release and repeat on each side.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Fist_Clench.gif?h=840');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (15, 'Wrist Extension', 'Strengthen', 'Wrist Extensors', '
-1. Sit in a chair, holding a 2-pound dumbbell in your hand, with your palm facing down. Rest your elbow comfortably on your knee.
-2. Keeping your palm facing down, extend your wrist by curling it toward your body. If this is too challenging, do the movement with no weight.
-3. Return to the starting position and repeat on each side.
-4. Try to isolate the movement to your wrist, keeping the rest of your arm still.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Wrist_Extension.gif?h=840');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (16, 'Wrist Flexion', 'Strengthen', 'Wrist Flexors', '
-1. Sit in a chair, holding a 2-pound dumbbell in your hand, with your palm facing up. Rest your elbow comfortably on your knee.
-2. Keeping your palm facing up, flex your wrist by curling it toward your body.
-3. Return to the starting position and repeat on each side.
-4. Try to isolate the movement to your wrist, keeping the rest of your arm still.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Wrist_Flexion.gif?h=840');
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (17, 'Supination', 'Strengthen', 'Supinator Muscle', '
-1. Sit in a chair, holding a 2-pound dumbbell vertically in your hand, with your elbow resting on your knee.
-2. Let the weight of the dumbbell help rotate your arm outward, turning your palm up.
-3. Rotate your hand back in the other direction until your palm is facing down in the starting position.
-4. Repeat on each side trying to isolate the movement to your lower arm, keeping your upper arm and elbow still.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Supination_with_A_Dumbbell.gif?h=840');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (8, 'Lunges', 'Strengthen', 'Quadriceps', 
+'1. Start with one foot in front of the other, with your toes facing forward.' + CHAR(13)+CHAR(10) + 
+'2. Keep your back straight.' + CHAR(13)+CHAR(10) + 
+'3. Bend your back knee down so that it almost touches the floor.' + CHAR(13)+CHAR(10) + 
+'4. Then push yourself up again.', 'https://thumbs.gfycat.com/UnknownPleasedKodiakbear-size_restricted.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (9, 'Shoulder Pass-Through', 'Stretch', 'Rotator Cuff', 
+'1. Stand with your feet shoulder-width apart and your arms in front of your body.' + CHAR(13)+CHAR(10) + 
+'2. Hold a stick, like a broomstick or PVC pipe, with an overhand grip. Your arms will be wider than shoulder-width. Make sure the stick or pipe is parallel to the floor.' + CHAR(13)+CHAR(10) + 
+'3. Engage your core and slowly raise the broomstick or pipe above your head, keeping your arms straight. Only go as far as comfortable.' + CHAR(13)+CHAR(10) + 
+'4. Hold the pose for a few seconds.' + CHAR(13)+CHAR(10) + 
+'5. Return to the starting position.', 'https://thumbs.gfycat.com/TotalAngelicDuckbillplatypus-small.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (10, 'Standing Arm Swings', 'Stretch', 'Rotator Cuff', 
+'1. Stand tall with your arms by your sides.' + CHAR(13)+CHAR(10) + 
+'2. Engage your core and swing your arms forward until they’re as high as you can go. Make sure you don’t raise your shoulders.' + CHAR(13)+CHAR(10) + 
+'3. Return your arms to the starting position and repeat.', 'https://thumbs.gfycat.com/EvenAjarCanine-small.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (11, 'High-to-Low Rows', 'Strengthen', 'Lats', 
+'1. Secure a resistance band to a sturdy object above shoulder height.' + CHAR(13)+CHAR(10) + 
+'2. Kneel down on one knee and grab the band with the opposite hand. The other hand can rest at your side.' + CHAR(13)+CHAR(10) + 
+'3. Pull the band toward your body while keeping your torso and arm straight. Focus on squeezing the shoulder blades together.' + CHAR(13)+CHAR(10) + 
+'4. Return to the starting position and repeat.', 'https://post.healthline.com/wp-content/uploads/2020/01/400x400_5_Easy_Rotator_Cuff_Exercises_High_to_Low_Rows.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (12, 'Reverse Fly', 'Strengthen', 'Lats', 
+'1. Hold a dumbbell in each hand.' + CHAR(13)+CHAR(10) + 
+'2. Stand with your feet shoulder-width apart, knees slightly bent.' + CHAR(13)+CHAR(10) + 
+'3. Engage your core and bend forward at the waist. Keep your back straight. Your arms will be extended.' + CHAR(13)+CHAR(10) + 
+'4. Raise your arms away from your body. Focus on squeezing your shoulder blades together. Stop when you get to shoulder height.' + CHAR(13)+CHAR(10) + 
+'5. Slowly return to the starting position and repeat.', 'https://post.healthline.com/wp-content/uploads/2019/12/400x400-Reverse_Fly.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (13, 'Sleeper Stretch', 'Stretch', 'Rotator Cuff', 
+'1. Lie on the affected side. If you have no injury or pain, choose a side to start with. Your shoulder should be stacked underneath you.' + CHAR(13)+CHAR(10) + 
+'2. Bring your elbow straight out from your shoulder and bend this arm, so your fingers are pointing toward the ceiling. This is the starting position.' + CHAR(13)+CHAR(10) + 
+'3. Gently guide this arm toward the floor using the unaffected arm. Stop when you feel a stretch in the back of your affected shoulder.' + CHAR(13)+CHAR(10) + 
+'4. Hold this position for up to 30 seconds.', 'https://post.healthline.com/wp-content/uploads/2019/12/400x400_Sleeper_Stretch_Sleeper_Stretch.gif');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (14, 'Fist Clench', 'Strengthen', 'Long Flexor Tendons', 
+'1. Sit at a table with your forearm resting on the table.' + CHAR(13)+CHAR(10) + 
+'2. Hold a rolled-up towel or small ball in your hand.' + CHAR(13)+CHAR(10) + 
+'3. Squeeze the towel in your hand and hold for 10 seconds.' + CHAR(13)+CHAR(10) + 
+'4. Release and repeat on each side.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Fist_Clench.gif?h=840');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (15, 'Wrist Extension', 'Strengthen', 'Wrist Extensors', 
+'1. Sit in a chair, holding a 2-pound dumbbell in your hand, with your palm facing down. Rest your elbow comfortably on your knee.' + CHAR(13)+CHAR(10) + 
+'2. Keeping your palm facing down, extend your wrist by curling it toward your body. If this is too challenging, do the movement with no weight.' + CHAR(13)+CHAR(10) + 
+'3. Return to the starting position and repeat on each side.' + CHAR(13)+CHAR(10) + 
+'4. Try to isolate the movement to your wrist, keeping the rest of your arm still.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Wrist_Extension.gif?h=840');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (16, 'Wrist Flexion', 'Strengthen', 'Wrist Flexors', 
+'1. Sit in a chair, holding a 2-pound dumbbell in your hand, with your palm facing up. Rest your elbow comfortably on your knee.' + CHAR(13)+CHAR(10) + 
+'2. Keeping your palm facing up, flex your wrist by curling it toward your body.' + CHAR(13)+CHAR(10) + 
+'3. Return to the starting position and repeat on each side.' + CHAR(13)+CHAR(10) + 
+'4. Try to isolate the movement to your wrist, keeping the rest of your arm still.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Wrist_Flexion.gif?h=840');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (17, 'Supination', 'Strengthen', 'Supinator Muscle', 
+'1. Sit in a chair, holding a 2-pound dumbbell vertically in your hand, with your elbow resting on your knee.' + CHAR(13)+CHAR(10) + 
+'2. Let the weight of the dumbbell help rotate your arm outward, turning your palm up. ' + CHAR(13)+CHAR(10) + 
+'3. Rotate your hand back in the other direction until your palm is facing down in the starting position.' + CHAR(13)+CHAR(10) + 
+'4. Repeat on each side trying to isolate the movement to your lower arm, keeping your upper arm and elbow still.', 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fitness-Exercise/400x400_5_Exercises_for_Tennis_Elbow_Rehab_Supination_with_A_Dumbbell.gif?h=840');
 set identity_insert [Exercise] off
 
 set identity_insert [UserProfile] on

@@ -209,7 +209,7 @@ export const RegimenList = () => {
                                         <Accordion.Body>
                                             <Stack direction="horizontal">
                                                 <Accordion.Body>
-                                                    <Card.Body>
+                                                    <Card.Body style={{ whiteSpace: "pre-line" }}>
                                                     <Card.Header>Instructions:</Card.Header>
                                                     {exercise.instructions}
                                                     </Card.Body>
