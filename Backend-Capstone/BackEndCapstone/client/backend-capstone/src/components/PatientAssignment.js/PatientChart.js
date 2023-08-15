@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Col, Card, Container, Row, ListGroup, Button, Carousel } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import dateFormat from "dateformat";
 import { getUserProfileById } from "../../Managers/UserProfileManager";
 import { getRegimenByPatientId } from "../../Managers/RegimenManager";
@@ -13,6 +13,7 @@ export const PatientChart = () => {
     const [patient, setPatient] = useState([]);
     const [regimen, setRegimen] = useState([]);
     const [exercises, setExercises] = useState([]);
+    const navigate = useNavigate();
     const [notes, setNotes] = useState([]);
 
     const { id } = useParams();
@@ -83,7 +84,7 @@ export const PatientChart = () => {
                                 </footer>
                             </blockquote>
                         </Card.Body>
-                        <Card.Footer className="text-center"><Button variant="primary">All Notes</Button></Card.Footer>
+                        <Card.Footer className="text-center"><Button variant="primary" onClick={() => navigate(`/PatientAssignments/${id}/Notes`)}>All Notes</Button></Card.Footer>
                     </Card>
                     <Card className="text-center">
                         <Card.Header>Current Patient Regimen</Card.Header>
@@ -111,7 +112,7 @@ export const PatientChart = () => {
                                 ))}
                             </Carousel>
                         </Card.Body>
-                        <Card.Footer className="text-muted"><Button variant="primary">Regimen Details</Button></Card.Footer>
+                        <Card.Footer className="text-muted"><Button variant="primary">View All Exercises</Button></Card.Footer>
                     </Card>
                 </Col>
             </Row>

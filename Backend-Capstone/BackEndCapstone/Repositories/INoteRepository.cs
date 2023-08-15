@@ -8,6 +8,8 @@ namespace BackEndCapstone.Repositories
         void Delete(int id);
         List<Note> GetNotesByPatientId(int id);
         List<Note> GetNotesByProviderId(int id);
+        Note GetNoteById(int id);
+
         void Update(Note note);
     }
 }

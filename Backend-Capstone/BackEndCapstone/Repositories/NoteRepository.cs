@@ -73,6 +73,39 @@ namespace BackEndCapstone.Repositories
         }
 
 
+        public Note GetNoteById(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                       SELECT n.Id, n.ProviderProfileId, n.PatientProfileId, n.Content, n.CreateDateTime, up1.FirstName AS ProviderFirstName, up1.LastName AS ProviderLastName, up1.Email AS ProviderEmail, up1.ImageLocation AS ProviderImage, up2.FirstName AS PatientFirstName, up2.LastName AS PatientLastName, up2.Email AS PatientEmail, up2.ImageLocation AS PatientImage
+                        FROM Note n
+                            LEFT JOIN UserProfile up1 on up1.Id = n.ProviderProfileId
+                            LEFT JOIN UserProfile up2 on up2.Id = n.PatientProfileId
+                        WHERE n.Id = @Id
+                        ORDER BY n.CreateDateTime DESC";
+
+                    DbUtils.AddParameter(cmd, "@Id", id);
+
+                    var reader = cmd.ExecuteReader();
+
+                    Note note = null;
+
+                    if (reader.Read())
+                    {
+                        note = NoteFormat(reader);
+                    }
+
+                    reader.Close();
+                    return note;
+                }
+            }
+        }
+
+
         public void Add(Note note)
         {
             using (var conn = Connection)

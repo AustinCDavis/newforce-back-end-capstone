@@ -37,9 +37,22 @@ namespace BackEndCapstone.Controllers
             return Ok(notes);
         }
 
+        [HttpGet("Note{id}")]
+        public IActionResult GetNoteById(int id)
+        {
+            var note = _noteRepository.GetNoteById(id);
+            if (note == null)
+            {
+                return NotFound();
+            }
+            return Ok(note);
+        }
+
         [HttpPost]
         public IActionResult Post(Note note)
         {
+            note.CreateDateTime = DateTime.Now;
+
             _noteRepository.Add(note);
             return CreatedAtAction("GetNotesByPatientId", new { id = note.Id }, note);
         }

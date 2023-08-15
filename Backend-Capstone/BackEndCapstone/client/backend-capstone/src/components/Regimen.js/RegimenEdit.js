@@ -21,13 +21,6 @@ export const UpdateRegimen = () => {
             )
     }, [id])
 
-    // const handleFieldChange = (evt) => {
-    //     const { name, value } = evt.target;
-    //     setRegimen((prevRegimen) => ({
-    //         ...prevRegimen,
-    //         [name]: value })
-    //     );
-    // };
 
     const handleSubmit = (event) => {
         event.preventDefault();

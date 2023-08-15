@@ -11,6 +11,7 @@ import { PatientChart } from "./PatientAssignment.js/PatientChart";
 import { RegimenForm } from "./Regimen.js/RegimenForm";
 import { RegimenDetails } from "./Regimen.js/RegimenDetails";
 import { UpdateRegimen } from "./Regimen.js/RegimenEdit";
+import { PatientNoteList } from "./Note.js/NoteList";
 
 export default function ApplicationViews() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -39,6 +40,7 @@ export default function ApplicationViews() {
                 <Route path="/Regimen/:id" element={<UpdateRegimen/>} />
                 <Route path="/PatientAssignments" element={<PatientAssignmentList />} />
                 <Route path="/PatientAssignments/:id" element={<PatientChart />} />
+                <Route path="/PatientAssignments/:id/Notes" element={<PatientNoteList />} />
 
                 </>
               ) : (

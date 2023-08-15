@@ -14,11 +14,11 @@ set identity_insert [Reaction] off
 --aiming for roughly 24 exercises for 3 regimens
 --go back and fix the image links to gifs fromthumbs.gyfcat
 set identity_insert [Exercise] on
-insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (1, 'Squat', 'Strengthen', 'Quadriceps', '
-1. Stand up with your feet shoulder-width apart.
-2. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees or to your comfort level.
-3. Press your heels into the floor to return to the initial position.
-4. Repeat until set is complete.', 'https://thumbs.gfycat.com/FirmLateCrane.webp');
+insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (1, 'Squat', 'Strengthen', 'Quadriceps', 
+'1. Stand up with your feet shoulder-width apart.'  + CHAR(13)+CHAR(10) + 
+'2. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees or to your comfort level.'  + CHAR(13)+CHAR(10) + 
+'3. Press your heels into the floor to return to the initial position.'  + CHAR(13)+CHAR(10) + 
+'4. Repeat until set is complete.', 'https://thumbs.gfycat.com/FirmLateCrane.webp');
 insert into [Exercise] ([Id], [Name], [Type], [Muscle], [Instructions], [VideoLocation]) values (2, 'Terminal Knee Extension', 'Strengthen', 'Quadriceps', '
 1. Tie an elastic exercise band ,of appropriate weight, to or around something solid.
 2. Once secured, loop the band around the back of your knee and step back until you feel tension on the band.

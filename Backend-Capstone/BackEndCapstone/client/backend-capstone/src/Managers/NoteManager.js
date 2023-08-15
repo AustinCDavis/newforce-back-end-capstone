@@ -25,6 +25,12 @@ export const getNotesByPatientId = (id) => {
 
 }
 
+export const getNoteById = (id) => {
+    return fetch(`${apiUrl}/api/Note/Note${id}`)
+    .then((r) => r.json())
+
+}
+
 export const editNote = (noteObject) => {
     return fetch(`${apiUrl}/api/Note/${noteObject.id}`, {
         method: "PUT",

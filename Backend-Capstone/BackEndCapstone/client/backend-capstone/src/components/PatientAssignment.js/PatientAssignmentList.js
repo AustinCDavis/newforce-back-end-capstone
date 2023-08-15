@@ -8,6 +8,7 @@ import { PencilFill} from "react-bootstrap-icons"
 import { TrashFill} from "react-bootstrap-icons"
 
 export const PatientAssignmentList = () => {
+    const userObject = JSON.parse(localStorage.getItem("user"));
     const [patientAssignments, setPatientAssignments] = useState([]);
     const navigate = useNavigate();
 
@@ -31,7 +32,6 @@ export const PatientAssignmentList = () => {
         }
     };
 
-
     //returns a list of all user patientAssignments
     return (
         <Container>
@@ -50,7 +50,6 @@ export const PatientAssignmentList = () => {
                 <tbody>
                     {patientAssignments.map((patientAssignment) => (
                         <>
-                            
                         <tr key={patientAssignment.id}>
                             <th scope="row">{patientAssignment.id}</th>
                             <td><NavLink href={`/PatientAssignments/${patientAssignment.id}`} id="patientAssignmentDetailsLink"><u>{patientAssignment.providerProfile.firstName} {patientAssignment.providerProfile.lastName}</u></NavLink></td>
@@ -59,7 +58,7 @@ export const PatientAssignmentList = () => {
                             <td>{patientAssignment.endDate}</td>
                             <td>
                         <div className="function-container">
-                        <a href={`/PatientAssignment/${patientAssignment.id}`} className="btn btn-outline-secondary mx-1" title="Details">
+                        <a href={`/PatientAssignment/${patientAssignment.id}`} className="btn btn-outline-secondary mx-1" title="Patient Details">
                             <EyeFill />
                         </a>
                         <a href="/" className="btn btn-outline-secondary mx-1" title="Edit">

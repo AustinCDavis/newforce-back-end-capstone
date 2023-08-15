@@ -33,8 +33,8 @@ export const getExercisesByPatientId = (id) => {
 
 }
 
-export const getExercisesByProviderId = (id) => {
-    return fetch(`${apiUrl}/api/Exercise/Provider${id}`)
+export const getExercisesByRegimenId = (id) => {
+    return fetch(`${apiUrl}/api/Exercise/Regimen${id}`)
     .then((r) => r.json())
 
 }
