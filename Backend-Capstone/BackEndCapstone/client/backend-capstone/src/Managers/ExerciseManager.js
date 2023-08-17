@@ -22,7 +22,7 @@ export const addExercise = (exerciseObject) => {
 };
 
 export const getExerciseById = (id) => {
-    return fetch(`${apiUrl}/api/Exercise/Exercise${id}`)
+    return fetch(`${apiUrl}/api/Exercise/${id}`)
     .then((r) => r.json())
 
 }
@@ -49,7 +49,7 @@ export const editExercise = (exercise) => {
     })
 }
 
-export const deleteQuestion = (id) => {
+export const deleteExercise = (id) => {
     return fetch(`${apiUrl}/api/Exercise/${id}`, {
         method: "DELETE",
     }).then(getAllExercises)

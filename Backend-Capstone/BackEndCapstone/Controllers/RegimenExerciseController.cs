@@ -15,23 +15,22 @@ namespace BackEndCapstone.Controllers
             _regimenExerciseRepository = regimenExerciseRepository;
         }
 
-        //This was associated to the GetExercisesByRegimenID but am thinking of uising the exercise repo for thet
-        //[HttpGet("Regimen{id}")]
-        //public IActionResult GetExercisesByRegimenId(int id) 
+        //[HttpGet("Regimen{regimenId}/Exercise{exerciseId}")]
+        //public IActionResult GetRegimenExerciseByRegimenIdAndExerciseId(int regimenId, int exerciseId)
         //{
-        //    var exercises = _regimenExerciseRepository.GetExercisesByRegimenId(id);
-        //    if (exercises == null)
+        //    var regimenExercise = _regimenExerciseRepository.GetRegimenExerciseByRegimenIdAndExerciseId(regimenId, exerciseId);
+        //    if (regimenExercise == null)
         //    {
         //        return NotFound();
         //    }
-        //    return Ok(exercises);
+        //    return Ok(regimenExercise);
         //}
 
         [HttpPost]
         public IActionResult Post(RegimenExercise regimenExercise)
         {
             _regimenExerciseRepository.Add(regimenExercise);
-            return CreatedAtAction("Get", new { id = regimenExercise.Id }, regimenExercise);
+            return CreatedAtAction("Put", new { id = regimenExercise.Id }, regimenExercise);
         }
 
         [HttpPut("{id}")]

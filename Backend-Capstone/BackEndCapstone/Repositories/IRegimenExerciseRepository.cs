@@ -4,9 +4,9 @@ namespace BackEndCapstone.Repositories
 {
     public interface IRegimenExerciseRepository
     {
+        //RegimenExercise GetRegimenExerciseByRegimenIdAndExerciseId(int regimenId, int exerciseId);
         void Add(RegimenExercise regimenExercise);
         void Delete(int id);
-        //List<RegimenExercise> GetExercisesByRegimenId(int id);
         void Update(RegimenExercise regimenExercise);
     }
 }

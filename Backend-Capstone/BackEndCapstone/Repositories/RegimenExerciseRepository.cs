@@ -8,8 +8,7 @@ namespace BackEndCapstone.Repositories
     {
         public RegimenExerciseRepository(IConfiguration configuration) : base(configuration) { }
 
-        //I believe I should get the exercises vis the exe4rcise repo I 
-        //public List<RegimenExercise> GetExercisesByRegimenId(int id)
+        //public RegimenExercise GetRegimenExerciseByRegimenIdAndExerciseId(int regimenId, int exerciseId)
         //{
         //    using (var conn = Connection)
         //    {
@@ -17,26 +16,31 @@ namespace BackEndCapstone.Repositories
         //        using (var cmd = conn.CreateCommand())
         //        {
         //            cmd.CommandText = @"
-        //                SELECT re.Id, re.RegimenId, re. ExerciseId, r.ProviderProfileId, r.Title, r.Description, r.CreateDateTime, e.Name, e.Type, e.Muscle, e.Instructions, e.VideoLocation
+        //                SELECT re.Id, re.RegimenId, re.ExerciseId
         //                FROM RegimenExercise re
-        //                    LEFT JOIN Regimen r on re.RegimenId = r.Id
-        //                    LEFT JOIN Exercise e on re.ExerciseId = e.Id
-        //                WHERE re.RegimenId = @Id
-        //                ORDER BY e.Name";
+        //                    LEFT JOIN Regimen r on r.Id = re.RegimenId
+        //                    LEFT JOIN Exercise e on e.Id = re.ExerciseId
+        //                WHERE r.Id = @RegimenId AND e.Id = @ExerciseId";
 
-        //            DbUtils.AddParameter(cmd, "@Id", id);
+        //            DbUtils.AddParameter(cmd, "@RegimenId", regimenId);
+        //            DbUtils.AddParameter(cmd, "@ExerciseId", exerciseId);
 
         //            var reader = cmd.ExecuteReader();
 
-        //            var exercises = new List<RegimenExercise>();
+        //            RegimenExercise regimenExercise = null;
 
-        //            while (reader.Read())
+        //            if (reader.Read())
         //            {
-        //                exercises.Add(RegimenExerciseFormat(reader));
+        //                regimenExercise = new RegimenExercise()
+        //                {
+        //                    Id = DbUtils.GetInt(reader, "Id"),
+        //                    RegimenId = DbUtils.GetInt(reader, "RegimenId"),
+        //                    ExerciseId = DbUtils.GetInt(reader, "ExerciseId")
+        //                };
         //            }
 
         //            reader.Close();
-        //            return exercises;
+        //            return regimenExercise;
         //        }
         //    }
         //}

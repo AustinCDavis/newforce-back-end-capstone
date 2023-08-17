@@ -28,5 +28,6 @@ namespace BackEndCapstone.Models
         public Regimen? Regimen { get; set; }
 
         public RegimenAssignment? RegimenAssignment { get; set; }
+        public RegimenExercise? RegimenExercise { get; set; }
     }
 }

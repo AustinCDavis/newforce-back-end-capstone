@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { addRegimen, deleteRegimen, getAllRegimens, getRegimenById, editRegimen } from "../../Managers/RegimenManager";
+import { addRegimen, deleteRegimen, getRegimenById, editRegimen, getRegimensByProviderId } from "../../Managers/RegimenManager";
 import { Container, Table } from "reactstrap";
 import "./Regimen.css"
 import { EyeFill, PencilFill, TrashFill } from "react-bootstrap-icons";
@@ -9,6 +9,7 @@ import { getExercisesByRegimenId } from "../../Managers/ExerciseManager";
 
 
 export const RegimenList = () => {
+    const navigate = useNavigate();
     const userObject = JSON.parse(localStorage.getItem("user"));
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
@@ -34,7 +35,7 @@ export const RegimenList = () => {
     const handleShow3 = () => setShow3(true);
 
     const getRegimens = () => {
-        getAllRegimens().then(allRegimens => setRegimens(allRegimens));
+        getRegimensByProviderId(userObject.id).then(allRegimens => setRegimens(allRegimens));
     };
 
     useEffect(() => {
@@ -196,21 +197,23 @@ export const RegimenList = () => {
                     <Modal.Title>Regimen Details</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Card className="text-center">
+                    <Card >
                         <Card.Header>{regimen.title}</Card.Header>
                         <Card.Body>
                             <Card.Text>
                                 {regimen.description}
                             </Card.Text>
-                                {exercises.map((exercise) =>
+                                {
+                                (exercises.length > 0) ? 
+                                (exercises.map((exercise) =>
                             <Accordion>
                                     <Accordion.Item eventKey={0} key={exercise.id}>
                                         <Accordion.Header>{exercise.name}</Accordion.Header>
                                         <Accordion.Body>
                                             <Stack direction="horizontal">
                                                 <Accordion.Body>
-                                                    <Card.Body style={{ whiteSpace: "pre-line" }}>
-                                                    <Card.Header>Instructions:</Card.Header>
+                                                    <Card.Header >Instructions:</Card.Header>
+                                                    <Card.Body border="secondary" style={{ whiteSpace: "pre-line" }}>
                                                     {exercise.instructions}
                                                     </Card.Body>
                                                 </Accordion.Body>
@@ -219,10 +222,15 @@ export const RegimenList = () => {
                                         </Accordion.Body>
                                     </Accordion.Item>
                             </Accordion>
-                                )}
+                                )) : (
+                                    <Card.Header className="text-center">No exercises associated at this time. <br/> Please select the button below to add an existing exercise or to create new exercises to associate.</Card.Header>
+                                )
+                            }
 
                         </Card.Body>
-                        <Card.Footer className="text-muted">some link to edit exercises</Card.Footer>
+                        <Card.Footer className="text-muted text-center">
+                            <Button onClick={() => navigate(`/Regimens/${regimen.id}`)}>Add or Create Exercise</Button>
+                        </Card.Footer>
                     </Card>
                 </Modal.Body>
             </Modal>

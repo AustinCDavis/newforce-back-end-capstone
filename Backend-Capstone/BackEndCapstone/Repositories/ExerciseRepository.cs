@@ -43,7 +43,7 @@ namespace BackEndCapstone.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT e.Id, e.Name, e.Type, e.Muscle, e.Instructions, e.VideoLocation, r.ProviderProfileId, r.Title, r.Description, r.CreateDateTime
+                        SELECT e.Id, e.Name, e.Type, e.Muscle, e.Instructions, e.VideoLocation, r.ProviderProfileId, r.Title, r.Description, r.CreateDateTime, re.Id AS RegimenExerciseId, re.RegimenId, re.ExerciseId
                         FROM Exercise e
                             LEFT JOIN RegimenExercise re on re.ExerciseId = e.Id
                             LEFT JOIN Regimen r on r.Id = re.RegimenId
@@ -67,11 +67,19 @@ namespace BackEndCapstone.Repositories
                             VideoLocation = DbUtils.GetString(reader, "VideoLocation"),
                             Regimen = new Regimen()
                             {
+                                Id = DbUtils.GetInt(reader, "Id"),
                                 ProviderProfileId = DbUtils.GetInt(reader, "ProviderProfileId"),
                                 Title = DbUtils.GetString(reader, "Title"),
                                 Description = DbUtils.GetString(reader, "Description"),
                                 CreateDateTime = DbUtils.GetDateTime(reader, "CreateDateTime")
+                            },
+                            RegimenExercise = new RegimenExercise()
+                            {
+                                Id = DbUtils.GetInt(reader, "RegimenExerciseId"),
+                                RegimenId = DbUtils.GetInt(reader, "RegimenId"),
+                                ExerciseId = DbUtils.GetInt(reader, "ExerciseId"),
                             }
+
                         });
                     }
 

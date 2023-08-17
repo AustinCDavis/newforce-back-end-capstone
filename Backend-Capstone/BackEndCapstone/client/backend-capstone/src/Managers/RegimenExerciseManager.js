@@ -1,6 +1,12 @@
 const apiUrl = "https://localhost:5001";
 
 
+export const GetRegimenExerciseByRegimenIdAndExerciseId = (regimenId, exerciseId) => {
+    return fetch(`${apiUrl}/api/RegimenExercise/Regimen${regimenId}/Exercise${exerciseId}`)
+    .then((r) => r.json())
+
+}
+
 export const addRegimenExercise = (regimenExerciseObject) => {
     return fetch(`${apiUrl}/api/RegimenExercise`, {
         method: "POST",
